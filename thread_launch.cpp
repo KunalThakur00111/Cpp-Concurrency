@@ -17,6 +17,9 @@ int main(){
 
     std::thread my_thread(f);// here also copy is passing of object f
 
+    // std:: thread my_thread((abc())); // we can do this too, it makes temp object
+    // std:: thread my_thread{abc()}; // same here 
+
     std::thread my_thread2(func);
 
     std::thread my_thread3([n]{
