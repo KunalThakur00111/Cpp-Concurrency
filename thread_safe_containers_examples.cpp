@@ -103,9 +103,8 @@ int main() {
     bool second_erased = false;
 
     std::thread third([&] { first_erased = list.erase_first(42); });
-    std::thread fourth([&] { second_erased = list.erase_first(42); });
+    std::thread fourth([&list, &second_erased] { second_erased = list.erase_first(42); });
 
     third.join();
     fourth.join();
-
 }
